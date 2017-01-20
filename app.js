@@ -10,14 +10,19 @@
     function LCController($scope, $filter) {
         $scope.name = "JuanMa Ariza";
         $scope.value = "";
+        $scope.messaje = "";
 
         $scope.commaCount = function () {
             var v = $scope.value;
-            var numCommas = v.split(',');
-            if(numCommas.length > 3)
-                alert('Too Much!!!!!!!!!');
-            else
-                alert('Enjoy!!')
+            if(v!="") {
+                var numCommas = v.split(',');
+                if (numCommas.length > 3)
+                    $scope.message = "Too Much!!!!";
+                else
+                    $scope.message = "Enjoy!";
+            }else{
+                $scope.message = "Empty!!";
+            }
         };
     }
 })();
